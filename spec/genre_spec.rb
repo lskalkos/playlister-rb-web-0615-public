@@ -1,4 +1,5 @@
-describe "Genre" do
+ require 'pry'
+ describe "Genre" do
 
   it "can initialize a genre" do
     expect(Genre.new).to be_an_instance_of(Genre)
@@ -27,6 +28,7 @@ describe "Genre" do
       artist = Artist.new
       song = Song.new.tap { |s| s.genre = genre }
       artist.add_song(song)
+      # binding.pry
     end
 
     expect(genre.artists.count).to eq(2)
@@ -41,6 +43,7 @@ describe "Genre" do
       song.genre = genre
       artist.add_song(song)
     end
+    # binding.pry
     expect(genre.artists.count).to eq(1)
   end
 
